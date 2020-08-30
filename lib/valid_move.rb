@@ -6,21 +6,14 @@
 # The position must be vacant, not currently taken by a player.
 
 def valid_move?(board, index) 
-  # Present on the game board.
-  if index.between?(0,8)
+  # Present on the game board and not already filled with a token.
+  if index.between?(0,8) && position_taken?(board, index) 
+  # returns true if the move is valid and false or nil if not
     true 
   else 
   # returns nil or false for a position that is not on the board (like 100)
     false 
-  end 
-  # Not already filled with a token.
-  if position_taken?(board, index) 
-    false 
-  else 
-    true 
-  end 
-  # returns true if the move is valid and false or nil if not
-  
+  end
 end 
 
 
