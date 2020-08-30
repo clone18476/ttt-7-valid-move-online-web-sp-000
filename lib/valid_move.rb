@@ -7,7 +7,7 @@
 
 def valid_move?(board, index) 
   # Present on the game board and not already filled with a token.
-  if index.between?(0,8) && position_taken?(board, index) 
+  if index.between?(0,8) && !position_taken?(board, index) 
   # returns true if the move is valid and false or nil if not
     true 
   else 
